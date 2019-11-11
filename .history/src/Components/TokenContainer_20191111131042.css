@@ -1,0 +1,22 @@
+
+.tokenContainer {
+    width: 40px;
+    height: 40px;
+    background: gray;
+    padding: 10px 0 0 10px;
+}
+
+.circle {
+    width: 25px;
+    height: 25px;
+    border: 2px solid white;
+    border-radius: 50%
+}
+
+.token-player1 {
+    background: red;
+}
+
+.token-player2 {
+    background: black;
+}

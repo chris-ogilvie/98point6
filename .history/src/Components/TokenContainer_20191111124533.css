@@ -1,0 +1,15 @@
+
+.tokenContainer {
+    width: 50px;
+    height: 50px;
+    background: gray;
+    padding: 25px;
+}
+
+.circle {
+    width: 25px;
+    height: 25px;
+    background: green;
+    border: 1px solid white;
+    border-radius: 50%
+}
