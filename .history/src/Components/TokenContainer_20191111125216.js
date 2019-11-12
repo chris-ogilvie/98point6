@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './TokenContainer.css';
+import './TokenSlot.css';
 
 const propTypes = {
     tokenValue: PropTypes.string,
@@ -14,18 +14,18 @@ const defaultProps = {
     size: ICON_SIZE_SMALL,
 };
 
-const TokenContainer = ({tokenValue}) => {
+const TokenSlot = ({tokenValue}) => {
 
     return (
         //<div>I am a token container with value: {tokenValue}</div>
-        <div className="tokenContainer">
+        <div className="TokenSlot">
             <div className="circle"></div>
         </div>
     );
 };
 
-TokenContainer.displayName = 'TokenContainer';
-TokenContainer.defaultProps = defaultProps;
-TokenContainer.propTypes = propTypes;
+TokenSlot.displayName = 'TokenSlot';
+TokenSlot.defaultProps = defaultProps;
+TokenSlot.propTypes = propTypes;
 
-export default TokenContainer;
+export default TokenSlot;

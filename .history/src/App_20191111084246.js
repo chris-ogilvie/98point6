@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import TokenContainer from './Components/TokenContainer';
+import TokenSlot from './Components/TokenSlot';
 import './App.css';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
-      <TokenContainer />
+      <TokenSlot />
     </div>
   );
 }

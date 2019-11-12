@@ -1,10 +1,10 @@
 import React from 'react';
 
-const TokenContainer = ({tokenValue}) => {
+const TokenSlot = ({tokenValue}) => {
 
     return (
         <div>foobar 2</div>
     );
 };
 
-export default TokenContainer;
+export default TokenSlot;

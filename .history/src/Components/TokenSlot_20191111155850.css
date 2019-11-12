@@ -1,5 +1,5 @@
 
-.tokenContainer {
+.TokenSlot {
     width: 40px;
     height: 40px;
     background: gray;
@@ -13,10 +13,10 @@
     border-radius: 50%
 }
 
-.token-player1 {
+.player1 {
     background: red;
 }
 
-.token-player2 {
-    background: black;
+.player2 {
+    background: blue;
 }

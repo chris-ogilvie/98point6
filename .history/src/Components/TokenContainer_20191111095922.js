@@ -1,8 +1,8 @@
 import React from 'react';
 
-const TokenContainer = () => {
+const TokenSlot = () => {
 
     return (<div>foobar 2</div>);
 };
 
-export default TokenContainer;
+export default TokenSlot;

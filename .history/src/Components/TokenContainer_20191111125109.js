@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './TokenContainer.css';
+import './TokenSlot.css';
 
-const TokenContainer = ({tokenValue}) => {
+const TokenSlot = ({tokenValue}) => {
 
     return (
         //<div>I am a token container with value: {tokenValue}</div>
-        <div className="tokenContainer">
+        <div className="TokenSlot">
             <div className="circle"></div>
         </div>
     );
 };
 
-export default TokenContainer;
+export default TokenSlot;
