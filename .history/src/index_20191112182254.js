@@ -7,6 +7,9 @@ import './index.css';
 import App from './containers/App';
 import rootReducer from './reducers';
 
-const store = createStore(rootReducer, {}, applyMiddleware(thunk));
+
+const initialState = {};
+const middleware = [thunk];
+const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));

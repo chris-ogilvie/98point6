@@ -10,7 +10,7 @@ Possible improvements:
 1. Unit tests:  tape, enzyme, sinon
 2. SASS/Less Preprocessor
 3. Storybook knobs
-4. Lack of browser support for fetch() in older browsers, change to use XMLHttpRequest or ensure polyfills in place
+4. Lack of browser support for fetch in older browsers, change to use:  XMLHttpRequest or 
 
 */
 const propTypes = { //todo: add these
