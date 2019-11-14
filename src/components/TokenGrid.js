@@ -1,32 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TokenSlot from '../components/TokenSlot';
+import {
+    formatGridData
+} from '../Utilities/HelperFunctions';
 import './TokenGrid.css';
 
 const propTypes = {
-    gridValues: PropTypes.arrayOf(PropTypes.number).isRequired,
+    moveHistory: PropTypes.arrayOf(PropTypes.number).isRequired,
     onClick: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
-    gridValues: [],
+    moveHistory: [],
     onClick: () => {},
 };
 
-const TokenGrid = ({gridValues, onClick}) => {
-    let index = 0;
-    let columnNumber = 0;
-
-    if (!Array.isArray(gridValues) || !gridValues.length) {
-        return null;
-    }
+const TokenGrid = ({moveHistory, onClick}) => {
+    let index = -1;
+    let columnNumber = -1;
+    const gridValues = formatGridData(moveHistory);
     
     return (
         <div className="gridContainer">
             {gridValues.map(tokenValue => {
                 index += 1;
-                columnNumber = columnNumber < 4 ? ++columnNumber : 1;
-                // console.log('setting columnNumber=', columnNumber)
+                columnNumber = columnNumber < 3 ? ++columnNumber : 0;
                 return (
                     <TokenSlot                    
                         columnNumber={columnNumber}

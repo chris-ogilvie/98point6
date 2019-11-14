@@ -14,8 +14,8 @@ const defaultProps = {
     tokenValue: 0,
 };
 
-const TokenSlot = ({columnNumber, onClick, tokenValue}) => {
-    
+const TokenSlot = ({columnNumber, index, onClick, tokenValue}) => {
+  
     const tokenStyle = () => {
         switch (tokenValue) {
             case 1: return 'player1';

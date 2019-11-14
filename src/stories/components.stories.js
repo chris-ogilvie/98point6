@@ -8,10 +8,10 @@ export default {
 
   export const TokenSlotStory = () =>
     <TokenSlot
-      tokenValue={null}
+        tokenValue={1}
     />;
 
     export const TokenGridStory = () =>
     <TokenGrid
-      gridValues={[0,0,0,0,0,0,0,0,0,0,0,0,1,1,2,2]}
+        moveHistory={[0,1,1,2,3]}
     />;
