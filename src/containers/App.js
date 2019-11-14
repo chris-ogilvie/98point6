@@ -8,6 +8,7 @@ import {
   setUserPlayerNumber,
   resetGrid,
 } from '../Actions/GameActions';
+import SelectPlayer from '../components/SelectPlayer';
 import TokenGrid from '../components/TokenGrid';
 import GameOver from '../components/GameOver';
 import PropTypes from 'prop-types';
@@ -55,24 +56,17 @@ class App extends React.Component {
   onColumnClick = columnNumber => {
     const { gameStatus } = this.props;
     
-    if ((gameStatus === GAME_STATUS_AWAITING || 
-      gameStatus === GAME_STATUS_IN_PROGRESS) && 
-      isMoveValid(this.props.moveHistory, columnNumber)) {
-      const moves = [...this.props.moveHistory, columnNumber];
+    if (gameStatus === GAME_STATUS_IN_PROGRESS && isMoveValid(this.props.moveHistory, columnNumber)) {
+        const moves = [...this.props.moveHistory, columnNumber];
 
-      //first, set the human player's move
-      this.props.setMove(columnNumber);
+        //first, set the human player's move
+        this.props.setMove(columnNumber);
 
-      //second, set the computer's move
-      this.props.getMove(moves);
+        //second, set the computer's move
+        this.props.getMove(moves); //todo: need to track whose move and move the computer's move to componentDidUpdate
     }
   }
-  
-  componentDidMount() {
-    // this.props.getMove(); //todo: move this
-  }
-
-  
+    
   resetGrid = () => {
     this.props.resetGrid();
   }
@@ -84,8 +78,21 @@ class App extends React.Component {
       const gameStatus = getGameStatus(moveHistory, userPlayerNumber);
       if (gameStatus !== GAME_STATUS_IN_PROGRESS) {
         this.props.setGameOver(gameStatus);
-        return true;
       }
+    }
+
+    if (prevProps.userPlayerNumber !== userPlayerNumber) {
+
+    }
+  }
+
+  selectPlayer = playerNumber => {
+    console.log(playerNumber);
+
+    this.props.setUserPlayerNumber(playerNumber);
+
+    if (playerNumber === 2) {
+      this.props.getMove() //let the computer go first
     }
   }
 
@@ -94,6 +101,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <h2>Token Grid</h2>
+        {
+          gameStatus === GAME_STATUS_AWAITING ?
+          <SelectPlayer
+            selectPlayer={this.selectPlayer}
+          />
+            : null
+        }
         <div className="GridWrapper">
           <TokenGrid
             moveHistory={this.props.moveHistory}

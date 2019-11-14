@@ -80,8 +80,9 @@ export const getGameStatus = (moveHistory = [], userPlayerNumber) => {
     }    
     
     const getRowLengthDiagonalLeft = (index, player, length) => {
+        if (length >=3) { debugger; }
         const nextCell = index + GRID_SIZE - 1;
-        if (nextCell >= gridCellCount) {
+        if (nextCell % GRID_SIZE === 0 || nextCell >= gridCellCount) {
             return length; // if we're at the boundary of the grid then return the row length
         } else if (gridData[nextCell] !== player) {
             return length; // if the next cell doesn't match the inputted player, return the row length
@@ -92,44 +93,11 @@ export const getGameStatus = (moveHistory = [], userPlayerNumber) => {
     for (let i = 0; i < gridCellCount; i++) {
         if (gridData[i] > 0) {
 
-            if (getRowLengthDown(i, gridData[i], 1) === 4) {
-                if (gridData[i] === userPlayerNumber) {
-                    console.log('You Won');
-                    return GAME_STATUS_OVER_WIN;
-                } else {
-                    console.log('You Lost');
-                    return GAME_STATUS_OVER_LOSE;
-                }
-            }
-
-            if (getRowLengthRight(i, gridData[i], 1) === 4) {
-                if (gridData[i] === userPlayerNumber) {
-                    console.log('You Won');
-                    return GAME_STATUS_OVER_WIN;
-                } else {
-                    console.log('You Lost');
-                    return GAME_STATUS_OVER_LOSE;
-                }
-            }
-
-            if (getRowLengthDiagonalRight(i, gridData[i], 1) === 4) {
-                if (gridData[i] === userPlayerNumber) {
-                    console.log('You Won');
-                    return GAME_STATUS_OVER_WIN;
-                } else {
-                    console.log('You Lost');
-                    return GAME_STATUS_OVER_LOSE;
-                }
-            }
-            
-            if (getRowLengthDiagonalLeft(i, gridData[i], 1) === 4) {
-                if (gridData[i] === userPlayerNumber) {
-                    console.log('You Won');
-                    return GAME_STATUS_OVER_WIN;
-                } else {
-                    console.log('You Lost');
-                    return GAME_STATUS_OVER_LOSE;
-                }
+            if (getRowLengthDown(i, gridData[i], 1) === 4 ||
+            getRowLengthRight(i, gridData[i], 1) === 4 ||
+            getRowLengthDiagonalRight(i, gridData[i], 1) === 4 ||
+            getRowLengthDiagonalLeft(i, gridData[i], 1) === 4) {
+                return gridData[i] === userPlayerNumber ? GAME_STATUS_OVER_WIN : GAME_STATUS_OVER_LOSE;
             }
         }
     }

@@ -5,11 +5,12 @@ import {
     SET_USER,
     RESET_GRID,
     GAME_STATUS_AWAITING,
+    GAME_STATUS_IN_PROGRESS,
 } from '../Utilities/Constants';
 const initialState = {
     moveHistory: [],
-    gameStatus: GAME_STATUS_AWAITING, // todo: this needs to be initialized validly
-    userPlayerNumber: 1, // todo: this needs be to set validly
+    gameStatus: GAME_STATUS_AWAITING,
+    userPlayerNumber: 1,
 };
 
 export default function GameReducer(state = initialState, action) {
@@ -26,8 +27,7 @@ export default function GameReducer(state = initialState, action) {
             return { ...state, gameStatus: data }
         }
         case SET_USER: {
-            debugger;
-            return { ...state, userPlayerNumber: data }
+            return { ...state, userPlayerNumber: data, gameStatus: GAME_STATUS_IN_PROGRESS }
         }
         case RESET_GRID: {
             return { ...state, moveHistory: [], gameStatus: GAME_STATUS_AWAITING }
