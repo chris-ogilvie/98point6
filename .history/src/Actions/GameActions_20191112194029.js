@@ -1,0 +1,27 @@
+import MOVES_API from '../Utilities/Constants';
+
+
+function getMoves() {
+
+    fetch(MOVES_API)
+        .then(response => {
+            debugger;
+            
+        })
+        .catch(error => {
+            // todo: ensure this is coded
+        });
+}
+
+export {
+    addItemQuantityError,
+    addItemToShoppingBag,
+    addShipToStoreMismatchError,
+    clearShoppingBag,
+    followRedirect,
+    getShoppingBag,
+    getPayPalCheckoutResponse,
+    getStores,
+    shipToNickname,
+    shipToStore,
+};

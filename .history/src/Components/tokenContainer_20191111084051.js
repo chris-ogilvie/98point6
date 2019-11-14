@@ -1,6 +1,6 @@
-const TokenContainer = () => {
+const TokenSlot = () => {
 
 
 };
 
-export default TokenContainer;
+export default TokenSlot;

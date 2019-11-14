@@ -1,0 +1,22 @@
+
+.TokenSlot {
+    width: 35px;
+    height: 35px;
+    background: gray;
+    padding: 10px 0 0 10px;
+}
+
+.circle {
+    width: 25px;
+    height: 25px;
+    border: 2px solid white;
+    border-radius: 50%
+}
+
+.player1 {
+    background: red;
+}
+
+.player2 {
+    background: blue;
+}

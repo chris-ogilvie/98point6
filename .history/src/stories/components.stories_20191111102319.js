@@ -1,5 +1,5 @@
 import React from 'react';
-import TokenContainer from '../components/TokenContainer';
+import TokenSlot from '../components/TokenSlot';
 // import { boolean, number, text } from '@storybook/addon-knobs';
 // import { action } from '@storybook/addon-actions';
 
@@ -7,8 +7,8 @@ export default {
     title: 'Components',
   };
 
-  export const TokenContainerStory = () =>
-    <TokenContainer
+  export const TokenSlotStory = () =>
+    <TokenSlot
       tokenValue="foo"
     />;
 

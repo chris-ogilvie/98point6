@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TokenContainer = ({tokenValue}) => {
+const TokenSlot = ({tokenValue}) => {
 
     return (
         //<div>I am a token container with value: {tokenValue}</div>
@@ -8,4 +8,4 @@ const TokenContainer = ({tokenValue}) => {
     );
 };
 
-export default TokenContainer;
+export default TokenSlot;

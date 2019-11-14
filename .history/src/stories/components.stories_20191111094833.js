@@ -1,6 +1,6 @@
 import React from 'react';
 // import { storiesOf } from '@storybook/react';
-import TokenContainer from 'components/TokenContainer';
+import TokenSlot from 'components/TokenSlot';
 // import { boolean, number, text } from '@storybook/addon-knobs';
 // import { action } from '@storybook/addon-actions';
 
@@ -8,8 +8,8 @@ export default {
     title: 'Components',
   };
 
-// storiesOf('TokenContainer', module)
+// storiesOf('TokenSlot', module)
 //     .add('default', (() => (
-//         <TokenContainer
+//         <TokenSlot
 //         />
 //     )));

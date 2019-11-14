@@ -1,14 +1,14 @@
 import React from 'react';
-import './TokenContainer.css';
+import './TokenSlot.css';
 
-const TokenContainer = ({tokenValue}) => {
+const TokenSlot = ({tokenValue}) => {
 
     return (
         //<div>I am a token container with value: {tokenValue}</div>
-        <div className="tokenContainer">
+        <div className="TokenSlot">
             <div className="circle">foo</div>
         </div>
     );
 };
 
-export default TokenContainer;
+export default TokenSlot;

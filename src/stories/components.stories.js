@@ -1,16 +1,17 @@
 import React from 'react';
-import TokenContainer from '../components/TokenContainer';
-
-// import { text } from '@storybook/addon-knobs';
-// import { boolean, number, text } from '@storybook/addon-knobs';
-// import { action } from '@storybook/addon-actions';
+import TokenSlot from '../components/TokenSlot';
+import TokenGrid from '../components/TokenGrid';
 
 export default {
     title: 'Components',
   };
 
-  export const TokenContainerStory = () =>
-    <TokenContainer
-      tokenValue={null}
+  export const TokenSlotStory = () =>
+    <TokenSlot
+        tokenValue={1}
     />;
 
+    export const TokenGridStory = () =>
+    <TokenGrid
+        moveHistory={[0,1,1,2,3]}
+    />;
